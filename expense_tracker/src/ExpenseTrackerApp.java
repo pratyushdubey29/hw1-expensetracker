@@ -7,7 +7,7 @@ public class ExpenseTrackerApp {
 
   /**
    * This is the main function of the class ExpenseTrackerApp
-   * @param args
+   * @param args Command line arguments
    */
   public static void main(String[] args) {
     

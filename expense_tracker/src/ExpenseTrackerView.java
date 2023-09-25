@@ -41,7 +41,7 @@ public class ExpenseTrackerView extends JFrame {
 
   /**
    * This is a getter method for the transactionsTable object
-   * @return transactionsTable
+   * @return Returns the transactionsTable object
    */
   public JTable getTransactionsTable() {
     return transactionsTable;
@@ -50,7 +50,7 @@ public class ExpenseTrackerView extends JFrame {
   /**
    * This is a method to obtain the text field value from the amountField object
    * and cast it to a double datatype.
-   * @return amount
+   * @return Returns the amount
    */
   public double getAmountField() {
     if(amountField.getText().isEmpty()) {
@@ -71,7 +71,7 @@ public class ExpenseTrackerView extends JFrame {
 
   /**
    * This is a method to obtain the text field value from the categoryField object
-   * @return categoryField.getText()
+   * @return Returns the categoryField.getText()
    */
   public String getCategoryField() {
     return categoryField.getText();
@@ -87,7 +87,7 @@ public class ExpenseTrackerView extends JFrame {
 
   /**
    * This is a getter method for the addTransactionBtn object
-   * @return addTransactionBtn
+   * @return Returns the addTransactionBtn object
    */
   public JButton getAddTransactionBtn() {
     return addTransactionBtn;
@@ -95,7 +95,7 @@ public class ExpenseTrackerView extends JFrame {
 
   /**
    * This is a getter method for the table model object
-   * @return model
+   * @return Returns the model object
    */
   public DefaultTableModel getTableModel() {
     return model;
@@ -184,7 +184,7 @@ public class ExpenseTrackerView extends JFrame {
 
   /**
    * This is a getter method for the transactions object
-   * @return transactions
+   * @return Returns the transactions object
    */
   public List<Transaction> getTransactions() {
     return transactions;

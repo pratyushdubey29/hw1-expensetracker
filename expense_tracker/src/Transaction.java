@@ -35,7 +35,7 @@ public class Transaction {
 
   /**
    * This is a getter method for the amount object
-   * @return amount
+   * @return Returns the amount object
    */
   public double getAmount() {
     return amount;
@@ -51,7 +51,7 @@ public class Transaction {
 
   /**
    * This is a getter method for the category object
-   * @return category
+   * @return Returns the category object
    */
   public String getCategory() {
     return category;
@@ -67,7 +67,7 @@ public class Transaction {
 
   /**
    * This is a getter method for the timestamp object
-   * @return timestamp
+   * @return Returns the timestamp object
    */
   public String getTimestamp() {
     return timestamp;
