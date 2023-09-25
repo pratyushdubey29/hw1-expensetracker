@@ -129,7 +129,11 @@ public class ExpenseTrackerView extends JFrame {
     getTableModel().addRow(new Object[]{t.getAmount(), t.getCategory(), t.getTimestamp()});
     refresh();
   }
-  
+
+  //Below method is called in case of invalid inputs. Generates a pop-up with the exceptionMessage.
+  public void showException(String exceptionMessage) {
+    JOptionPane.showMessageDialog(new JFrame(), exceptionMessage);
+  }
 
 
   // Other view methods
