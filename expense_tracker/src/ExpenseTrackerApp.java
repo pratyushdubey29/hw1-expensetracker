@@ -29,6 +29,9 @@ public class ExpenseTrackerApp {
       StringBuilder exceptionMessageBuilder = new StringBuilder();
 
       double amount = 0;
+      // Below are the cases:
+      // 1. It goes to catch block in case of invalid datatype.
+      // 2. In the try block it checks if the amount is within the range or not.[check is possible only when datatype is correct]
       try {
         // Get transaction data from view
         amount = view.getAmountField();
@@ -40,12 +43,14 @@ public class ExpenseTrackerApp {
       }
 
       String category = view.getCategoryField();
+      // Below if block validates the category.
       if(!validator.isCategoryValid(category)) {
         exceptionMessageBuilder.append("Please enter a valid category");
       }
 
       String exception = exceptionMessageBuilder.toString();
 
+      // Call the view to pop up the error message.
       if(!exception.isEmpty()) {
         view.showException(exception);
         return;

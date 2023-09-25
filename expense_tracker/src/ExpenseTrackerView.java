@@ -130,6 +130,7 @@ public class ExpenseTrackerView extends JFrame {
     refresh();
   }
 
+  //Below method is called in case of invalid inputs. Generates a pop-up with the exceptionMessage.
   public void showException(String exceptionMessage) {
     JOptionPane.showMessageDialog(new JFrame(), exceptionMessage);
   }
