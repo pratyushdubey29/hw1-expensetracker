@@ -7,21 +7,51 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List; 
 
+/**
+ * The ExpenseTrackerView class that stores the tracker table content
+ * and controls the table view creation and actions
+ */
 public class ExpenseTrackerView extends JFrame {
 
+  /**
+   * Object to store the transaction table
+   */
   private JTable transactionsTable;
+  /**
+   * Object for the Add Transaction Button
+   */
   private JButton addTransactionBtn;
+  /**
+   * Object for the Amount Field
+   */
   private JTextField amountField;
+  /**
+   * Object for the Category Field
+   */
   private JTextField categoryField;
+  /**
+   * Table model object for this view
+   */
   private DefaultTableModel model;
+  /**
+   * A list of Transaction objects
+   */
   private List<Transaction> transactions = new ArrayList<>();
 
-  
 
+  /**
+   * This is a getter method for the transactionsTable object
+   * @return Returns the transactionsTable object
+   */
   public JTable getTransactionsTable() {
     return transactionsTable;
   }
 
+  /**
+   * This is a method to obtain the text field value from the amountField object
+   * and cast it to a double datatype.
+   * @return Returns the amount
+   */
   public double getAmountField() {
     if(amountField.getText().isEmpty()) {
       return 0;
@@ -31,25 +61,50 @@ public class ExpenseTrackerView extends JFrame {
     }
   }
 
+  /**
+   * This is the setter method for the amountField object
+   * @param amountField Amount to be set
+   */
   public void setAmountField(JTextField amountField) {
     this.amountField = amountField;
   }
 
+  /**
+   * This is a method to obtain the text field value from the categoryField object
+   * @return Returns the categoryField.getText()
+   */
   public String getCategoryField() {
     return categoryField.getText();
   }
 
+  /**
+   * This is the setter method for the categoryField object
+   * @param categoryField Category to be set
+   */
   public void setCategoryField(JTextField categoryField) {
     this.categoryField = categoryField;
   }
 
+  /**
+   * This is a getter method for the addTransactionBtn object
+   * @return Returns the addTransactionBtn object
+   */
   public JButton getAddTransactionBtn() {
     return addTransactionBtn;
   }
+
+  /**
+   * This is a getter method for the table model object
+   * @return Returns the model object
+   */
   public DefaultTableModel getTableModel() {
     return model;
   }
 
+  /**
+   * This is a constructor method of the ExpenseTrackerView class.
+   * @param model The table model to initialize the view
+   */
   public ExpenseTrackerView(DefaultTableModel model) {
     setTitle("Expense Tracker"); // Set title
     setSize(600, 400); // Make GUI larger
@@ -88,6 +143,10 @@ public class ExpenseTrackerView extends JFrame {
   
   }
 
+  /**
+   * This method takes the updated list of transactions and refreshes/updates the view (in the UI)
+   * @param transactions The list of updated transaction
+   */
   public void refreshTable(List<Transaction> transactions) {
       // model.setRowCount(0);
       model.setRowCount(0);
@@ -110,6 +169,9 @@ public class ExpenseTrackerView extends JFrame {
   
     }  
 
+  /**
+   * This method fetches all the transactions and calls the refreshTable() to update the view
+   */
   public void refresh() {
 
     // Get transactions from model
@@ -120,10 +182,18 @@ public class ExpenseTrackerView extends JFrame {
   
   }
 
+  /**
+   * This is a getter method for the transactions object
+   * @return Returns the transactions object
+   */
   public List<Transaction> getTransactions() {
     return transactions;
   }
-  
+
+  /**
+   * This method accepts a new transaction t and updates the table model and the view (in the UI)
+   * @param t Transaction to be added
+   */
   public void addTransaction(Transaction t) {
     transactions.add(t);
     getTableModel().addRow(new Object[]{t.getAmount(), t.getCategory(), t.getTimestamp()});
