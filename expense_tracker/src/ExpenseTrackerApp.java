@@ -5,6 +5,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ExpenseTrackerApp {
 
+  /**
+   * This is the main function of the class ExpenseTrackerApp
+   * @param args
+   */
   public static void main(String[] args) {
     
     // Create MVC components

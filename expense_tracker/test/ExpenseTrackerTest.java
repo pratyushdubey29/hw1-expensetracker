@@ -5,11 +5,24 @@ import javax.swing.table.DefaultTableModel;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This is the test class for testing the working of Transaction object creation
+ * and can be extended to test other functioning of ExpenseTrackerView and ExpenseTrackerApp
+ * if needed.
+ */
 public class ExpenseTrackerTest {
-
+    /**
+     * Test ExpenseTrackerView object
+     */
     private ExpenseTrackerView view;
+    /**
+     * Test ExpenseTrackerApp object
+     */
     private ExpenseTrackerApp app;
 
+    /**
+     * This method sets up the initial table model, view and the app object
+     */
     @Before
     public void setup() {
         DefaultTableModel tableModel = new DefaultTableModel();
@@ -21,6 +34,10 @@ public class ExpenseTrackerTest {
         app = new ExpenseTrackerApp();
     }
 
+    /**
+     * This method tests the proper creation of a Transaction object
+     * when given a category and an amount
+     */
     @Test
     public void testAddTransaction() {
         // Create a new transaction
